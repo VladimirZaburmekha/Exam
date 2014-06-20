@@ -63,7 +63,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Classes\File.cs" />
-    <Compile Include="Classes\FilesHandler.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
