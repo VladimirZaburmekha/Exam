@@ -1,0 +1,13 @@
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\bin\Debug\XMLEditor.exe.config
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\bin\Debug\XMLEditor.exe
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\bin\Debug\XMLEditor.pdb
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor.csprojResolveAssemblyReference.cache
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\MainWindow.baml
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\MainWindow.g.cs
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\App.g.cs
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor_MarkupCompile.cache
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor.g.resources
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor.Properties.Resources.resources
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor.csproj.GenerateResource.Cache
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor.exe
+c:\users\zv\documents\visual studio 2013\Projects\XMLEditor\XMLEditor\obj\Debug\XMLEditor.pdb
