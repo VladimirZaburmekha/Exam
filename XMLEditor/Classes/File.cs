@@ -10,9 +10,9 @@ namespace XMLEditor.Classes
    public class File
     {
       
-       private string fileAddress;
-       public HashSet<string> tags = new HashSet<string>();      
-       public void setFileTags()
+       public string fileAddress;
+       public List<string> tags {get;private set;}   
+       public void read()
        {
            XmlTextReader reader = null;             
            try
@@ -26,7 +26,10 @@ namespace XMLEditor.Classes
                    if (reader.IsStartElement())
                    {
                        if (reader.Prefix == String.Empty)
-                           tags.Add(reader.LocalName.ToString());
+                       {                      
+                           string tmp = reader.LocalName.ToString();
+                           tags.Add(tmp);
+                       }
                    }
                }
                tags.Distinct();
@@ -38,7 +41,11 @@ namespace XMLEditor.Classes
            }    
        
        }
-       public HashSet<string> getTags() { return this.tags; }
-       public File(string address) { fileAddress = address; setFileTags();}
+       public File(string address) 
+       { fileAddress = address; tags=new List<string>(); read();}
+       public override string ToString()
+         {
+             return this.fileAddress;
+         }
     }
 }
