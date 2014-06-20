@@ -29,13 +29,16 @@ namespace XMLEditor.Classes
                            tags.Add(reader.LocalName.ToString());
                    }
                }
+               tags.Distinct();
            }
            finally
            {
                if (reader != null)
                    reader.Close();
-           }           
+           }    
+       
        }
-       public File(string address) { fileAddress = address; setFileTags(); tags.Distinct(); }
+       public HashSet<string> getTags() { return this.tags; }
+       public File(string address) { fileAddress = address; setFileTags();}
     }
 }
