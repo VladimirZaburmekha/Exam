@@ -11,16 +11,16 @@
     <Grid>
         <ListBox x:Name="FilesListBox" Margin="34,134,34.4,59.8" SelectionChanged="FilesListBox_SelectionChanged"/>
         <Label Content="Нове значення" HorizontalAlignment="Left" Margin="31,68,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="UseToAllButton" Content="Застосувати для всіх" HorizontalAlignment="Right" Margin="0,0,199.4,31.8" VerticalAlignment="Bottom" Width="129" Height="23" Background="#FFA9FF8F" Click="UseToAllButton_Click"/>
+        <Button x:Name="UseToAllButton" Content="Застосувати для всіх" HorizontalAlignment="Right" Margin="0,0,199.4,31.8" VerticalAlignment="Bottom" Width="129" Height="23" Background="#FFA9FF8F" Click="UseToAllButton_Click" IsEnabled="False"/>
         <ComboBox x:Name="FieldToReplace" Margin="132,33,209.4,0" VerticalAlignment="Top" Height="25" Background="#FFBBFFB1"/>
         <Label Content="Файли" HorizontalAlignment="Left" Margin="31,103,0,0" VerticalAlignment="Top"/>
         <Label Content="Поле для заміни" HorizontalAlignment="Left" Margin="31,32,0,0" VerticalAlignment="Top"/>
         <Button x:Name="OpenButton" Content="Додати файл" HorizontalAlignment="Left" Margin="34,0,0,32.2" VerticalAlignment="Bottom" Width="110" Height="23" Background="#FFF4FFB3" Click="OpenButton_Click"/>
-        <Button x:Name="UseToSelectedButton" Content="Застосувати для вибраного" HorizontalAlignment="Right" Margin="0,0,34.4,31.8" VerticalAlignment="Bottom" Width="160" Height="23" Background="#FFA9FF8F" Click="UseToSelectedButton_Click"/>
+        <Button x:Name="UseToSelectedButton" Content="Застосувати для вибраного" HorizontalAlignment="Right" Margin="0,0,34.4,31.8" VerticalAlignment="Bottom" Width="160" Height="23" Background="#FFA9FF8F" Click="UseToSelectedButton_Click" IsEnabled="False"/>
         <TextBox x:Name="NewValueTextBox" Height="23" Margin="132,68,34.4,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <RadioButton x:Name="ToAllRadio" Content="Для всіх" Margin="0,38,140.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64" Click="ToAllRadio_Click"/>
+        <RadioButton x:Name="ToAllRadio" Content="Для всіх" Margin="0,38,140.4,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64" Click="ToAllRadio_Click" IsEnabled="False"/>
         <RadioButton x:Name="ToSelectedRadio" Content="Для вибраного" Margin="0,38,34.4,0" VerticalAlignment="Top" IsChecked="True" HorizontalAlignment="Right" Width="102" Checked="ToSelectedRadio_Checked" Click="ToSelectedRadio_Click"/>
-        <Button x:Name="DeleteButton" Content="Видалити" HorizontalAlignment="Left" Margin="149,0,0,32.2" Width="75" Background="#FFFF9999" Click="DeleteButton_Click" Height="23" VerticalAlignment="Bottom"/>
+        <Button x:Name="DeleteButton" Content="Видалити" HorizontalAlignment="Left" Margin="149,0,0,32.2" Width="75" Background="#FFFF9999" Click="DeleteButton_Click" Height="23" VerticalAlignment="Bottom" IsEnabled="False"/>
 
     </Grid>
 </Window>

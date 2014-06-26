@@ -30,41 +30,52 @@ namespace XMLEditor
         }
         public void updateListBox()
         {
-            try
-            {
+                                                try
+           {
                 FieldToReplace.Items.Clear();
-
-                if (ToAllRadio.IsChecked == true)
-                {                   
-                    /*HashSet<string> tmp = new HashSet<string>();*/
-                    List<string> tmp = new List<string>();
-                    tmp.Clear();
-                    tmp = FH.getIntersectTags();
-                    foreach (string tag in tmp)
-                    {
-                        FieldToReplace.Items.Add(tag);
-                    }
-                }
-                else
+                if (FH.ListOfFiles.Count > 0)
                 {
-                    if (FilesListBox.SelectedItem==null)
+                    if (ToAllRadio.IsChecked == true)
                     {
-                        FilesListBox.SelectedIndex = FilesListBox.Items.Count - 1;
+                        /*HashSet<string> tmp = new HashSet<string>();*/
+                        List<string> tmp = new List<string>();
+                        tmp.Clear();
+                        tmp = FH.getIntersectTags();
+                        foreach (string tag in tmp)
+                        {
+                            FieldToReplace.Items.Add(tag);
+                        }
                     }
-                    foreach (string tag in (FilesListBox.SelectedItem as File).tags.Distinct())
+                    else
                     {
-                        FieldToReplace.Items.Add(tag);
+                        if (FilesListBox.SelectedItem == null)
+                        {
+                            FilesListBox.SelectedIndex = FilesListBox.Items.Count - 1;
+                        }
+                        foreach (string tag in (FilesListBox.SelectedItem as File).tags.Distinct())
+                        {
+                            FieldToReplace.Items.Add(tag);
+                        }
                     }
                 }
             }
             catch (Exception ex) { System.Windows.MessageBox.Show(ex.Message); }
+            if (FH.ListOfFiles.Count == 0) { UseToSelectedButton.IsEnabled = false; UseToAllButton.IsEnabled = false; }
+            if (ToAllRadio.IsChecked == false) { UseToAllButton.IsEnabled = false; UseToSelectedButton.IsEnabled = true; } else {if(FH.ListOfFiles.Count>1) UseToAllButton.IsEnabled = true; }
+            if (FilesListBox.Items.Count == 0) { DeleteButton.IsEnabled = false; UseToSelectedButton.IsEnabled = false; } else { DeleteButton.IsEnabled = true; }
+            if (FH.ListOfFiles.Count > 1) { ToAllRadio.IsEnabled = true; } else { ToAllRadio.IsEnabled = false; ToSelectedRadio.IsChecked = true; UseToAllButton.IsEnabled = false; }
+           
+               
+               
+                
         }
        
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "XML Файли|*xml";
             OFD.ShowDialog();
-            if (OFD.FileName != null) 
+            if (OFD.FileName != "") 
             {
                 File f = new File(OFD.FileName);
                 FH.ListOfFiles.Add(f);
@@ -78,19 +89,31 @@ namespace XMLEditor
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            try 
+            //try 
+            //{
+            if (FilesListBox.Items.Count > 1)
             {
                 FH.ListOfFiles.Remove(FilesListBox.SelectedItem as File);
                 FilesListBox.Items.RemoveAt(FilesListBox.SelectedIndex);
                 updateListBox();
             }
-            catch (Exception ex) { System.Windows.MessageBox.Show(ex.Message); }
-            System.Windows.MessageBox.Show(FH.ListOfFiles.Count.ToString());
+            else 
+            {
+                FH.ListOfFiles.Remove(FilesListBox.SelectedItem as File);
+                FH.ListOfFiles.Clear();
+                FilesListBox.Items.Clear();
+              //  FilesListBox.Items.Add("vassa");
+              //  updateListBox();
+                FieldToReplace.Items.Clear();
+            }
+           // }
+            //catch (Exception ex) { System.Windows.MessageBox.Show(ex.Message); }
         }
 
         private void ToAllRadio_Click(object sender, RoutedEventArgs e)
         {
             updateListBox();
+            
         }
 
         private void ToSelectedRadio_Checked(object sender, RoutedEventArgs e)

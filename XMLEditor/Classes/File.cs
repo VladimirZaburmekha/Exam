@@ -15,7 +15,7 @@ namespace XMLEditor.Classes
        public void read()
        {
            XmlTextReader reader = null;             
-           try
+          try
            {                
                // Load the reader with the XML file.
                reader = new XmlTextReader(fileAddress);
@@ -34,6 +34,7 @@ namespace XMLEditor.Classes
                }
                tags.Distinct();
            }
+           catch (Exception ex) { System.Windows.MessageBox.Show(ex.Message); }
            finally
            {
                if (reader != null)
